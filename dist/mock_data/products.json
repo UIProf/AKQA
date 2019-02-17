@@ -1,0 +1,74 @@
+[
+    {
+      "index": 0,
+      "isSale": true,
+      "isExclusive": false,
+      "price": "$18.88",
+      "productImage": "https://image.ibb.co/mEcwvy/products1.jpg",
+      "productName": "Striped shirt",
+      "size": ["XS", "S", "L", "XL"]
+    },
+    {
+      "index": 1,
+      "isSale": false,
+      "isExclusive": false,
+      "price": "$25.44",
+      "productImage": "https://image.ibb.co/d5w3Qy/products_2.jpg",
+      "productName": "Denim shirt",
+      "size": ["XS", "S"]
+    },
+    {
+      "index": 2,
+      "isSale": false,
+      "isExclusive": true,
+      "price": "$12.93",
+      "productImage": "https://image.ibb.co/hVpjXd/product_3.jpg",
+      "productName": "Plain cotton t-shirt",
+      "size": ["S", "M"]
+    },
+    {
+      "index": 3,
+      "isSale": false,
+      "isExclusive": false,
+      "price": "$26.32",
+      "productImage": "https://image.ibb.co/g3FDQy/product_4.jpg",
+      "productName": "Plain 3/4 sleeve cotton t-shirt",
+      "size": ["XL"]
+    },
+    {
+      "index": 4,
+      "isSale": false,
+      "isExclusive": false,
+      "price": "$12.16",
+      "productImage": "https://image.ibb.co/eqGd8J/product_5.jpg",
+      "productName": "White dress shirt",
+      "size": ["M", "L"]
+    },
+    {
+      "index": 5,
+      "isSale": false,
+      "isExclusive": false,
+      "price": "$30.27",
+      "productImage": "https://image.ibb.co/dLdfNd/product_6.jpg",
+      "productName": "Long Sleeve Skivvy Top",
+      "size": ["XS", "S", "M"]
+    },
+    {
+      "index": 6,
+      "isSale": true,
+      "isExclusive": false,
+      "price": "$24.26",
+      "productImage": "https://image.ibb.co/gUWBTJ/product_7.jpg",
+      "productName": "Puffer Vest with Hood",
+      " ": ["M", "L", "XL"]
+    },
+    {
+      "index": 7,
+      "isSale": false,
+      "isExclusive": true,
+      "price": "$17.73",
+      "productImage": "https://image.ibb.co/fCjWTJ/product_8.jpg",
+      "productName": "Funnel Neck Swing Top",
+     "size": ["XS", "S", "XL"]
+    }
+  ]

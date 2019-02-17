@@ -1,0 +1,135 @@
+@import "_variables/border";
+@import "_variables/colors";
+@import "_variables/sizes";
+@import "_variables/font";
+@import "clearfix";
+
+
+@import "media-queries";
+
+.filterSearch{
+  position: relative;
+  width: 100%;
+
+  h2{
+    margin: 0;
+    padding: 0 0 0 10px;
+    text-align: left;
+    display: inline-block;
+    float:left;
+  }
+  .filterSizes{
+      background: $color-white;
+      font-size: $font-m;
+      height: 28px;
+      float: right;
+      line-height: 1;
+      padding-left: 5px;
+      -webkit-appearance: menulist;
+      width: 100px;
+  }
+
+  .filterNav{
+    background: $color-light-blue;
+    padding: 10px;
+  }
+
+  .filterResult{
+    border: $border-width-sm solid $color-light-gray;
+
+    .column{
+      @include clearfix;
+      float: left;
+
+      &.products{
+        position: relative;
+        height: 255px;
+        border-right: $border-width-sm solid $color-light-gray;
+        border-bottom: $border-width-sm solid $color-light-gray;
+
+        @include above($desktop-page-width){
+          height:315px;
+
+        }
+        @include above($desktop-large-width){
+          height:425px;
+        }
+
+      }
+
+
+      .productImage{
+        padding: 5px;
+
+        img{
+          width: 100%;
+        }
+
+
+      }
+
+      .isSale, .isExclusive{
+        padding: 5px 10px;
+        font-size:$font-l;
+        font-weight: bold;
+        background: $color-red;
+        border: none;
+        position: relative;
+        left: -66px;
+
+        @include above($mobile-width){
+          left: -54px;
+
+        }
+
+        @include above($desktop-page-width){
+          left: -88px;
+
+        }
+        @include above($desktop-large-width){
+          left: -140px;
+        }
+      }
+      .isExclusive{
+        background: $color-green;
+        left: -44px;
+
+        @include above($mobile-width){
+          left: -37px;
+
+        }
+        @include above($desktop-page-width){
+          left: -73px;
+
+        }
+        @include above($desktop-large-width){
+          left: -124px;
+        }
+      }
+
+      .product-detail{
+        @include clearfix;
+        padding: 5px 10px;
+
+        .product-name,
+        .product-price{
+          font-size: $font-m;
+          display: inline-block;
+          float: left;
+          font-weight: bold;
+          text-align: left;
+          width: 70%;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+        .product-price{
+          float: right;
+          text-align: right;
+          width: 30%;
+        }
+
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
-body{
-    padding: 0;
-    margin: 0;
-    background: #f4f4f4;
-}
+@import "_variables/border";
+@import "_variables/colors";
+@import "_variables/font";
+@import "_variables/sizes";
+@import 'app';
+@import "header";
+@import "filterSearch";

@@ -1,4 +1,146 @@
-body {
-  padding: 0;
+*.html body {
   margin: 0;
-  background: #f4f4f4; }
+  padding: 0; }
+
+.App {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin: 0; }
+
+.warning {
+  color: #990000;
+  font-weight: bold; }
+
+.container {
+  width: 100%; }
+  .container::after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both; }
+
+.row::after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+.column {
+  width: calc(50% - 1px);
+  float: left; }
+  @media (min-width: 481px) {
+    .column {
+      width: calc(25% - 1px); } }
+
+.is-hidden {
+  display: none; }
+
+.is-margin-bottom {
+  margin-bottom: 20px; }
+
+.is-margin-top {
+  margin-top: 20px; }
+
+.filterSearch {
+  position: relative;
+  width: 100%; }
+  .filterSearch h2 {
+    margin: 0;
+    padding: 0 0 0 10px;
+    text-align: left;
+    display: inline-block;
+    float: left; }
+  .filterSearch .filterSizes {
+    background: #FFFFFF;
+    font-size: 12px;
+    height: 28px;
+    float: right;
+    line-height: 1;
+    padding-left: 5px;
+    -webkit-appearance: menulist;
+    width: 100px; }
+  .filterSearch .filterNav {
+    background: #dcf2f2;
+    padding: 10px; }
+  .filterSearch .filterResult {
+    border: 1px solid #e3e3e3; }
+    .filterSearch .filterResult .column {
+      float: left; }
+      .filterSearch .filterResult .column::after {
+        content: " ";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both; }
+      .filterSearch .filterResult .column.products {
+        position: relative;
+        height: 255px;
+        border-right: 1px solid #e3e3e3;
+        border-bottom: 1px solid #e3e3e3; }
+        @media (min-width: 1024px) {
+          .filterSearch .filterResult .column.products {
+            height: 315px; } }
+        @media (min-width: 1281px) {
+          .filterSearch .filterResult .column.products {
+            height: 425px; } }
+      .filterSearch .filterResult .column .productImage {
+        padding: 5px; }
+        .filterSearch .filterResult .column .productImage img {
+          width: 100%; }
+      .filterSearch .filterResult .column .isSale, .filterSearch .filterResult .column .isExclusive {
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        background: #c93434;
+        border: none;
+        position: relative;
+        left: -66px; }
+        @media (min-width: 321px) {
+          .filterSearch .filterResult .column .isSale, .filterSearch .filterResult .column .isExclusive {
+            left: -54px; } }
+        @media (min-width: 1024px) {
+          .filterSearch .filterResult .column .isSale, .filterSearch .filterResult .column .isExclusive {
+            left: -88px; } }
+        @media (min-width: 1281px) {
+          .filterSearch .filterResult .column .isSale, .filterSearch .filterResult .column .isExclusive {
+            left: -140px; } }
+      .filterSearch .filterResult .column .isExclusive {
+        background: #009900;
+        left: -44px; }
+        @media (min-width: 321px) {
+          .filterSearch .filterResult .column .isExclusive {
+            left: -37px; } }
+        @media (min-width: 1024px) {
+          .filterSearch .filterResult .column .isExclusive {
+            left: -73px; } }
+        @media (min-width: 1281px) {
+          .filterSearch .filterResult .column .isExclusive {
+            left: -124px; } }
+      .filterSearch .filterResult .column .product-detail {
+        padding: 5px 10px; }
+        .filterSearch .filterResult .column .product-detail::after {
+          content: " ";
+          visibility: hidden;
+          display: block;
+          height: 0;
+          clear: both; }
+        .filterSearch .filterResult .column .product-detail .product-name,
+        .filterSearch .filterResult .column .product-detail .product-price {
+          font-size: 12px;
+          display: inline-block;
+          float: left;
+          font-weight: bold;
+          text-align: left;
+          width: 70%;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden; }
+        .filterSearch .filterResult .column .product-detail .product-price {
+          float: right;
+          text-align: right;
+          width: 30%; }

@@ -1,0 +1,48 @@
+@import "clearfix";
+@import "media-queries";
+*.html body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.warning {
+  color: darken(red, 20%);
+  font-weight: bold;
+}
+
+
+.container{
+  @include clearfix;
+  width: 100%;
+}
+
+.row{
+  @include clearfix;
+}
+
+.column{
+  width: calc(50% - 1px);
+  float: left;
+
+  @include above($mobile-page-width){
+    width: calc(25% - 1px);
+  }
+}
+.is-hidden{
+  display: none;
+}
+.is-margin-bottom{
+  margin-bottom: 20px;
+}
+.is-margin-top{
+  margin-top: 20px;
+}

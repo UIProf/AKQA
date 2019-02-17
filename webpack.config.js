@@ -1,5 +1,6 @@
 const webpack = require('webpack'); 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: ['./src/index.js', "./src/styles/main.scss"],
@@ -12,10 +13,7 @@ module.exports = {
           },
           {
             test: /\.scss$/,
-            use: ExtractTextPlugin.extract({
-              fallback: "style-loader",
-              use: "css-loader!sass-loader",
-            })
+            loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"])
           }
         ]
     },
@@ -29,7 +27,10 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin('style.css')
+        new ExtractTextPlugin('style.css'),
+        new CopyWebpackPlugin([
+          {from:"src/mock_data", to:"mock_data"}
+        ])
     ],
     devServer: {
       contentBase: './dist',
