@@ -1,33 +1,42 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchProducts } from '../actions/ProductAction';
 import Products from '../containers/Products';
 
 
-
 class Main extends Component{
+    
     constructor(props){
         super(props);
         this.state = {
-            filterSizes: ''
+            filterSizes: '',
         }
-
+        this.filterProducts = [];
         this.updateProducts = this.updateProducts.bind(this);
 
     }
-   
-    updateProducts(e){
-        this.setState({filterSizes: e.target.value});
+    componentWillMount(){
+        this.props.dispatch(fetchProducts());
     }
+
+    updateProducts(e){
+        this.setState({
+            filterSizes: e.target.value
+        });  
+    }
+
+
     render(){
-        const products = [...this.props.siteproducts];
+        const productslist = this.props.products.items;
         const selectedFilter = this.state.filterSizes;
         if (selectedFilter){
-            this.filteredProducts = products.filter(
-                (product) => Array.isArray(product.size) && product.size.indexOf(selectedFilter) !== -1
-
-            );
+            this.filterProducts = [...productslist].filter(
+                (product) => Array.isArray(product.size) && product.size.indexOf(selectedFilter) !== -1)
+        
         }else{
-            this.filteredProducts =[...this.props.siteproducts];
+                this.filterProducts = [...productslist]
         }
+    
         return(
             <div className="filterSearch">
               <div className="row filterNav">
@@ -45,10 +54,10 @@ class Main extends Component{
               </div>
               <div className="row filterResult">
                     {
-                      this.filteredProducts.map((productslist) => {
-                          return <Products productslist={productslist} key={productslist.index}/>
-                      })
-                   }
+                        this.filterProducts.map((item) => {
+                            return <Products productsItems={item} key={item.index}/>}
+                        )
+                    }
               </div>
           </div>
         )
@@ -56,4 +65,11 @@ class Main extends Component{
 
 }
 
-export default Main;
+const mapStateToProps = state => {
+     return {
+         products: state.products,
+         loading: state.products.loading,
+         error: state.products.error
+     };
+ }
+ export default connect(mapStateToProps)(Main);
